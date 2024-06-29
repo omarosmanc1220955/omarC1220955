@@ -1,0 +1,30 @@
+OMAR OSMAAN IBRAHIM
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class omar {
+    public static List<Integer> findCommonElements(int[] arr1, int[] arr2) {
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+        for (int num : arr1) {
+            set1.add(num);
+        }
+        for (int num : arr2) {
+            set2.add(num);
+        }
+        Set<Integer> intersection = new HashSet<>(set1);
+        intersection.retainAll(set2);
+
+        List<Integer> commonElements = new ArrayList<>(intersection);
+        return commonElements;
+    }
+
+    public static void main(String[] args) {
+        int[] array1 = {1,2,3,4,5,6,7,8,9};
+        int[] array2 = {2,3,5,7,8};
+        List<Integer> commonElements = findCommonElements(array1, array2);
+        System.out.println(commonElements);
+    }
+}
